@@ -53,13 +53,17 @@ Implement a CRD for an auto-scaling service, `autoscaler`, that dynamically adju
 
 ### Exam Scenarios
 
+```
 kubectl delete -f operators/multitier.yaml
 kubectl delete -f operators/app-tier.yaml
 kubectl delete -f operators/featureflag.yaml
+```
 
 ### Tasks
 
+```
 kubectl delete -f loggingservice.yaml
 kubectl delete -f my-service.yaml
 kubectl delete -f autoscalers.yaml
 kubectl delete -f my-autoscaler.yaml
+```
