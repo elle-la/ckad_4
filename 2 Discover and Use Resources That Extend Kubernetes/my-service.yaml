@@ -1,0 +1,7 @@
+apiVersion: pluralsight.com/v1
+kind: LoggingService
+metadata:
+  name: my-service
+spec:
+  logRetentionDays: 30
+  logLevel: error

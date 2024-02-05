@@ -1,0 +1,7 @@
+apiVersion: pluralsight.com/v1
+kind: AutoScaler
+metadata:
+  name: my-autoscaler
+spec:
+  cpuThresholdPercent: 75
+  memoryThresholdPercent: 80
