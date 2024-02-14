@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-dev
+spec:
+  restartPolicy: Never
+  containers:
+    - name: busybox
+      image: busybox:stable
+      command: ['sh', '-c', 'echo $ENVIRONMENT; echo $MAX_CONNECTIONS; echo $LOG_LEVEL']
