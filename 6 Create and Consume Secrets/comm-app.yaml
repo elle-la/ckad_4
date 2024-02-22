@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comm-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: comm-app
+  template:
+    metadata:
+      labels:
+        app: comm-app
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:stable
+        command: ['sh', '-c', 'echo $USERNAME; echo $PASSWORD; echo $NEW_CHECKOUT_FLOW; echo $MAX_TRANSACTION_VALUE; echo $LOG_LEVEL']

@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: message-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: message-svc
+  template:
+    metadata:
+      labels:
+        app: message-svc
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:stable
+        command: ['sh', '-c', 'echo $USERNAME; echo $PASSWORD; echo $MESSAGE_QUEUE_NAME; echo $RETRY_ATTEMPTS; echo $LOG_LEVEL']

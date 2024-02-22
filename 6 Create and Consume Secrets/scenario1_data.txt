@@ -1,0 +1,4 @@
+db-username: YXBwLXVzZXIK
+db-password: SXQncyBhIHNlY3JldCEK
+db-port: 3306
+app-port: 80
