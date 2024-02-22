@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ps-backend
+spec:
+  restartPolicy: Never
+  containers:
+    - name: busybox
+      image: busybox:stable
+      command: ['sh', '-c', 'echo $LOG_LEVEL; echo $DB_HOST; echo $DB_PORT']

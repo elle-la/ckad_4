@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ps-api
+spec:
+  restartPolicy: Never
+  containers:
+    - name: busybox
+      image: busybox:stable
+      command: ['sh', '-c', 'echo $WEATHER_API; echo $STORMWARN_API']
