@@ -6,10 +6,3 @@ spec:
   containers:
   - name: nginx
     image: nginx:latest
-    volumeMounts:
-    - name: config-volume
-      mountPath: /etc/nginx/conf.d
-  volumes:
-  - name: config-volume
-    configMap:
-      name: nginx-config
