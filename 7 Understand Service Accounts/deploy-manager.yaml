@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-manager
+  template:
+    metadata:
+      labels:
+        app: deploy-manager
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:stable
+        command: ['sh', '-c', 'while true; do echo Running...; sleep 5; done']

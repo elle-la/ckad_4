@@ -43,8 +43,17 @@ Answers to each task can be found in the `answers.md` file.
 
 ### Task 1
 
+The `deploy-manager` deployment needs permissions to create, update, and delete deployments in the `deployments` namespace. Set up the necessary access using the `deployment-manager` role.
+
+You may need to create the needed namespace:
+
+```
+kubectl create namespace deployments
+```
 
 ### Task 2
+
+The `custom-metrics-collector` pod needs the ability to list and watch custom metrics across the cluster. Perform the needed actions for the pod to accomplish this.
 
 ## Clean Up
 
@@ -64,5 +73,12 @@ kubectl delete -f ps-api-sa.yaml
 ### Tasks
 
 ```
-
+kubectl delete -f deploy-manager.yaml
+kubectl delete -f deployment-manager-role.yaml
+kubectl delete -f deploy-manager-rb.yaml
+kubectl delete -f deploy-manager-sa.yaml
+kubectl delete -f custom-metrics-collector.yaml
+kubectl delete -f custom-metrics-crb.yaml
+kubectl delete -f metrics-viewer-role.yaml
+kubectl delete -f custom-metrics-sa.yaml
 ```
