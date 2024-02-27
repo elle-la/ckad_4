@@ -43,7 +43,19 @@ Answers to each task can be found in the `answers.md` file.
 
 ### Task 1
 
+A new application pod, `api-pod` is being deployed in your Kubernetes cluster. It needs to adhere to strict security policies including:
+
+- Running as a specific user ID 2000 and group ID 3000
+- Preventing any escalation of privileges
+- The application needs to communicate on port 9443, which typically requires elevated privileges. Ensure it has the capability to bind to this port by adding the `CAP_NET_BIND_SERVICE` capability
+
 ### Task 2
+
+The `cache-pod` is designed to cache data for applications, necessitating specific security contexts. The requirements include:
+
+- The pod should run under user ID 4050 and group ID 4050.
+- It must include a security context to forbid the use of the SYS_TIME capability
+- The volume mount should allow the pod to write data, but ensure the root filesystem remains read-only 
 
 ## Clean Up
 
@@ -57,10 +69,6 @@ kubectl delete -f file-svc.yaml
 ### Tasks
 
 ```
-kubectl delete -f comm-app.yaml
-kubectl delete -f db-comm-config.yaml
-kubectl delete -f comm-config.yaml
-kubectl delete -f message-svc.yaml
-kubectl delete -f broker-config.yaml
-kubectl delete -f message-config.yaml
+kubectl delete -f api-pod.yaml
+kubectl delete -f cache-pod.yaml
 ```
