@@ -51,7 +51,7 @@ Attempt to deploy the pod defined in `lightweight-svc.yaml`. Troubleshoot the po
 
 ### Task 3
 
-Create a namespace, `ps-test`, that limits the total amount of storage that can be requested to 100Gi. Ensure that no single PersistentVolumeClaim can request more than 10Gi.
+Create a namespace, `ps-test`, that limits the total amount of storage that can be requested to 100Gi. Ensure that no more than 10 PersistentVolumeClaims can be requested.
 
 ## Clean Up
 

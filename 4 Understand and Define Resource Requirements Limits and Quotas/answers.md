@@ -69,7 +69,7 @@ kubectl apply -f lightweight-svc.yaml
 
 ## Task 3
 
-Create a namespace, `ps-test`, that limits the total amount of storage that can be requested to 100Gi. Ensure that no single PersistentVolumeClaim can request more than 10Gi.
+Create a namespace, `ps-test`, that limits the total amount of storage that can be requested to 100Gi. Ensure that no more than PersistentVolumeClaims can be requested.
 
 ### Answer
 
